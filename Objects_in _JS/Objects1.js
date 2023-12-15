@@ -41,15 +41,16 @@ function Cource(instructor, title, descriptio, languag, duration, fees, link){
     }
 }
 
-let MERNStack=new Cource("Aditya", "W","MERN","Astar","Hinglish","3",50000,"https://google.com")\
+//here we can create multiple object like MERNStack like java only 
+let MERNStack=new Cource("Aditya", "W","MERN","Astar","Hinglish","3",50000,"https://google.com")
+
+MERNStack.greet=function(){
+    console.log("Welcome to Cohert")
+}
 //Sealing the object means  object methods and variables can only be modified but no extra things can be added 
 Object.seal(MERNStack);
-/*MERNStack.greet=function(){
-    console.log("Welcome to Cohert")
-}*/
-
 console.log(MERNStack)
-//console.log(MERNStack.greet())
+console.log(MERNStack.greet())
 console.log(MERNStack.welcome())
 MERNStack.welcome=function(){
     console.log("Welcome bolo bete ")
@@ -61,3 +62,7 @@ MERNStack.welcome=function(){
     console.log("Welcome mat bo ")
 }
 console.log(MERNStack.welcome())
+//Object.keys() gives all keys in the given object
+console.log(Object.keys(MERNStack))
+//Object.keys() gives all values in the given object
+console.log(Object.values(MERNStack))
