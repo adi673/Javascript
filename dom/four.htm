@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code </title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="lang">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+
+    function addLang(langName){
+        const li=document.createElement('li')
+        li.innerHTML=`${langName}`
+        document.querySelector('.lang').appendChild(li)
+        
+    }
+    addLang("Typescript")
+    addLang("Golang")
+
+    function addLangOpti(langName){
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(`${langName}`))
+        document.querySelector('.lang').appendChild(li)
+    }
+    addLangOpti("Rust")
+    addLangOpti("Java")
+
+    //edit 
+    function editLang(langName){
+        const secondLang=document.querySelector('li:nth-child(2)')
+        console.log(secondLang)
+        const newL=document.createElement('li')
+        newL.textContent=langName
+        secondLang.replaceWith(newL)
+
+    }
+    editLang("C++")
+
+    function editLangOpti(langName){
+        const replace_container=document.querySelector('li:nth-child(1)')
+        const ele=document.createElement('li')
+        ele.appendChild(document.createTextNode(`${langName}`))
+        replace_container.replaceWith(ele)
+    }
+    editLangOpti("HTML")
+</script>
+</html>
