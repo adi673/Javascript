@@ -12,7 +12,7 @@
     </ul>
 </body>
 <script>
-
+    //add ele
     function addLang(langName){
         const li=document.createElement('li')
         li.innerHTML=`${langName}`
@@ -32,8 +32,8 @@
 
     //edit 
     function editLang(langName){
-        const secondLang=document.querySelector('li:nth-child(2)')
-        console.log(secondLang)
+        const secondLang=document.querySelector('li:nth-child(1)')
+       // console.log(secondLang)
         const newL=document.createElement('li')
         newL.textContent=langName
         secondLang.replaceWith(newL)
@@ -41,12 +41,27 @@
     }
     editLang("C++")
 
-    function editLangOpti(langName){
-        const replace_container=document.querySelector('li:nth-child(1)')
+    function editLangOpti(langName,n){
+        const replace_container=document.querySelector(`li:nth-child(${n})`)
         const ele=document.createElement('li')
         ele.appendChild(document.createTextNode(`${langName}`))
         replace_container.replaceWith(ele)
     }
-    editLangOpti("HTML")
+    editLangOpti("HTML",3)
+
+    function editOpti2(langName,n){
+        const replace_container=document.querySelector(`li:nth-child(${n})`)
+        replace_container.outerHTML=`<li>${langName}</li>`
+    }
+    editOpti2("papa",4)
+
+    
+    //remove ele
+    function removeEle(n){
+        const delt_container=document.querySelector(`li:nth-child(${n})`)
+        delt_container.remove()
+    }
+    removeEle(3)
+
 </script>
 </html>
