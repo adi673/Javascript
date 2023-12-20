@@ -19,17 +19,29 @@
    </div>
 </body>
 <script>
+    
    document.querySelector('#images').addEventListener('click', (e)=>{
      console.log('You choosed image')
      console.log(e.target.parentNode.remove())
-   },true)  //true or false vlaue defines type of propogation we can stop propogtion using e.stopPropagation()   for this checke propogation folder why we nedd to stop it 
+   })  //true or false vlaue defines type of propogation we can stop propogtion using e.stopPropagation()   for this checke propogation folder why we nedd to stop it 
             //default value will be false 
             //false means event bubbling => inside to outside 
             //true means event capture => ouside to inside
             //if you want to keep it true you have to keep it true for parent and child element 
-   const li_select=document.querySelector('li')
-   li_select.id.addEventListener('click',function(e){
-    console.log(`You choosed ${li_select.id}`)
-   },true)
+   const li_select=document.querySelectorAll('li')
+   console.log(li_select)
+   li_select.forEach(function(n){
+        console.log("ann: ",n)
+        n.addEventListener('click',function(e){
+            //console.log(e)
+            console.log(`You choosed ${e.target}`)
+        })
+   })
+   document.querySelector('#owl').addEventListener('click',(e)=>{
+        console.log("you selected the owl")
+   })
+
+   
+    
 </script>
 </html>
