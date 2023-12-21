@@ -22,7 +22,11 @@
 			"extensions": [
 				"esbenp.prettier-vscode",
 				"vscode-icons-team.vscode-icons",
-				"wayou.vscode-todo-highlight"
+				"wayou.vscode-todo-highlight",
+				"xabikos.JavaScriptSnippets",
+				"hiteshchoudharycode.chai-theme",
+				"mgmcdermott.vscode-language-babel",
+				"sdras.night-owl"
 			],
 			"settings": {
 				"editor.fontSize": 18,
