@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurrentTarget instance</title>
+</head>
+<body>
+    <div id="parent" style="padding: 1rem;
+    border: 1px solid black;">
+        Click parent
+        <div id="child" style="padding: 1rem;
+        border: 1px solid black;">
+          Click child
+          <div id="sec_child" style="padding: 1rem;
+          border: 1px solid black;">
+            Click second_child
+            </div>
+        </div>
+    </div>
+      
+    <button id="reset" style=" margin: 0.5rem;">Reset</button>
+    <pre id="output" style=" margin: 0.5rem;"></pre>
+    <script>
+        const output = document.querySelector("#output");
+        const parent = document.querySelector("#parent");
+        parent.addEventListener("click", (e) => {
+            const currentTarget = e.currentTarget.getAttribute("id");
+            const target = e.target.getAttribute("id");
+            output.textContent = `Current target: ${currentTarget}\n`;
+            output.textContent += `Target: ${target}`;
+        });
+
+        const reset = document.querySelector("#reset");
+        reset.addEventListener("click", () => document.location.reload());
+
+    </script>
+
+    <!-- currentTarget will alwys give output target on which eventListner is applied  being clicking on child of that target. -->
+    
+    <!-- while e.target will return the elemnt on which u clicked particularly being it is child of elemnt on which event listner is applied -->
+      
+</body>
+</html>

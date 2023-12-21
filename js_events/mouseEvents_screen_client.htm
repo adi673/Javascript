@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Move your mouse to see its position.</p>
+    <p id="screen-log"></p>
+    <script>
+        let screenLog = document.querySelector("#screen-log");
+        document.addEventListener("mousemove", logKey);
+
+        function logKey(e) {
+            screenLog.innerText = `
+            Screen X/Y: ${e.screenX}, ${e.screenY}
+            Client X/Y: ${e.clientX}, ${e.clientY}`;
+        }
+
+//function checkClickMap(e) {
+  // if (e.screenX < 50) doRedButton();
+  // if (50 <= e.screenX && e.screenX < 100) doYellowButton();
+  // if (e.screenX >= 100) doRedButton();
+//}
+
+    </script>
+</body>
+</html>

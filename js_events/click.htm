@@ -14,15 +14,24 @@
             <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
             <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+            <li><a style="color: aliceblue;" href="https://google.com" target="_blank" id="google">Google</a></li>
         </ul>
    </div>
 </body>
 <script>
     
    document.querySelector('#images').addEventListener('click', (e)=>{
-     console.log('You choosed image')
-     console.log(e.target.parentNode.remove())
+        if(e.target.tagName==='IMG'){   //tag name are just all letters in capital
+            console.log('You choosed image')
+            //console.log(e.target);
+            e.target.parentNode.remove()
+        }else if(e.target.tagName==='A'){
+            console.log('You choosed Link')
+            e.preventDefault()
+            
+        }
+        console.log(e.target.tagName)
+     
    })  //true or false vlaue defines type of propogation we can stop propogtion using e.stopPropagation()   for this checke propogation folder why we nedd to stop it 
             //default value will be false 
             //false means event bubbling => inside to outside 

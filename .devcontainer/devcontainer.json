@@ -26,7 +26,8 @@
 				"xabikos.JavaScriptSnippets",
 				"hiteshchoudharycode.chai-theme",
 				"mgmcdermott.vscode-language-babel",
-				"sdras.night-owl"
+				"sdras.night-owl",
+				"ritwickdey.LiveServer"
 			],
 			"settings": {
 				"editor.fontSize": 18,
