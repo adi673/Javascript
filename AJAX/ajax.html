@@ -1,1 +1,56 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>altKey example</title>
+  </head>
+
+  <body style="background-color: 212121;">
+    <button type="button" id="sec">Secondary</button>
+    <button type="button" id="suc">Success</button>
+    <script>
+      const btn1=document.getElementById('sec')
+      btn1.addEventListener('click',()=>{
+        console.log("hello")
+        //instantiate an xhr object
+        const xhr= new XMLHttpRequest()
+
+        //open object 
+        xhr.open('GET','https://api.github.com/users/adi673',true)    //GET or POST method , LINK for API, true for non blocking code or ASYNC and falsee for blocking code means synchronus code
+
+        //What to to while progressing the request you can add progress bar 
+        xhr.onprogress=function(){
+          console.log('loading  progresss bar ')  //can add functionality for progress bar  or loader
+        }
+        xhr.onreadystatechange=function(){
+          console.log("Ready state is: ",xhr.readyState)
+          //readyState 0 is request has not been sent yet
+          //readyState 1 is open() has been called.
+          //readyState 2 is send() has been called, and headers and status are available.
+          //readyState 3 is Downloading; responseText holds partial data.
+          //readyState 4 is The operation is complete.
+        }
+        //what to do when responce is ready
+        xhr.onload=function(){
+          if(this.status===200){  //200 is HTTPS status code for success reffer more status codes from here  https://www.restapitutorial.com/httpstatuscodes.html
+            console.log(this.responseText)
+            const data=JSON.parse(this.responseText)
+            console.log(data.login)
+          }else{
+            console.log("Failed to Reach destination")
+          }
+          
+        }
+
+        //Send the request
+        xhr.send()
+        console.log("Non blocking code thats why this is getting written before data")
+
+      })
+       
+
+    </script>
+  </body>
+</html>
 
